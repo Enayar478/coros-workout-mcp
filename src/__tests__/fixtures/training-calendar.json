@@ -1,0 +1,5 @@
+{
+  "entities": [{ "idInPlan": 42, "happenDay": "20260817", "planId": "plan-1", "planProgramId": "program-1" }],
+  "programs": [{ "idInPlan": 42, "id": "workout-1", "name": "Sanitized Strength" }],
+  "maxIdInPlan": 42
+}

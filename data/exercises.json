@@ -320,6 +320,49 @@
     "desc": "-Starting Position:\nStanding or sitting position. Keep your torso slightly back and core tight to keep your torso stable.\nGrasp dumbbells with both hands, palms facing back, with the dumbbells located on either side of the shoulders at roughly shoulder height.\n\n-Action:\nTo begin the movement, push your arms upward while slowly rotating your wrists so that your palms turn forward as the dumbbells reach their highest point. Keep an even, steady pace throughout the upward push, using shoulder and arm strength to push the dumbbells up.\nPause briefly when your arms are straight and your palms are forward. Slowly lower the dumbbells, rotating your wrists so that your palms face backward during the process.\n\n-Tip:\nExhale as you push up and inhale as you lower down.\nStop training when you experience discomfort.\nKeep your body stable and do not sway."
   },
   {
+    "id": "478227481772605839",
+    "name": "Asymmetric Pull-up",
+    "codeName": "Asymmetric Pull-up",
+    "overview": "",
+    "animationId": 0,
+    "muscle": [
+      12
+    ],
+    "muscleRelevance": [
+      3,
+      5,
+      1
+    ],
+    "part": [
+      3,
+      6
+    ],
+    "equipment": [
+      1
+    ],
+    "exerciseType": 2,
+    "targetType": 3,
+    "targetValue": 15,
+    "intensityType": 1,
+    "intensityValue": 0,
+    "restType": 1,
+    "restValue": 30,
+    "sets": 1,
+    "sortNo": 0,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1781536198,
+    "thumbnailUrl": "",
+    "sourceUrl": "",
+    "videoUrl": "",
+    "videoInfos": [],
+    "muscleText": "Biceps",
+    "secondaryMuscleText": "Latissimus Dorsi,Abs,Deltoids",
+    "partText": "Back,Arms",
+    "equipmentText": "Bodyweight",
+    "desc": ""
+  },
+  {
     "id": "469646538830954496",
     "name": "B-Skips",
     "codeName": "T1213",
@@ -2033,6 +2076,39 @@
     "desc": "Starting Position:\nStand in front of the rope, holding the end of a rope in each hand, with your arms at your side, your body bent slightly, your weight lowered, your feet a certain distance apart, and your horse in place.\n\r\nAction:\nQuickly raise one arm above the shoulder level, as quickly as you can, returning the arm to its original Position, then raise the other arm and repeat.Continue to alternate your left and right arms, swinging the rope up and down as fast as you can and as many times as possible in the shortest amount of time.\n\r\nTips:\nBalance your body and use the strength of the rest of your body to stabilize yourself."
   },
   {
+    "id": "479528366695956781",
+    "name": "Bear-Hug / Front-Loaded Carry",
+    "codeName": "Bear-Hug / Front-Loaded Carry",
+    "overview": "Custom exercise for planned COROS workouts. Perform Bear-Hug / Front-Loaded Carry as prescribed in the workout notes.",
+    "muscle": [
+      5
+    ],
+    "muscleRelevance": [],
+    "part": [
+      0
+    ],
+    "equipment": [
+      11
+    ],
+    "exerciseType": 2,
+    "targetType": 3,
+    "targetValue": 15,
+    "intensityType": 1,
+    "intensityValue": 0,
+    "restType": 1,
+    "restValue": 30,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1786382373,
+    "thumbnailUrl": "",
+    "videoInfos": [],
+    "muscleText": "Abs",
+    "secondaryMuscleText": "",
+    "partText": "Whole Body",
+    "equipmentText": "Kettlebell",
+    "desc": ""
+  },
+  {
     "id": "469655194532233216",
     "name": "Behind the Neck Press",
     "codeName": "T1286",
@@ -2794,6 +2870,39 @@
     "partText": "Shoulders,Legs/Hips",
     "equipmentText": "Bodyweight",
     "desc": "-Starting Position:\nStand side-by-side, side planks, eyes forward.\nLift one side foot forward, toes straight, while keeping your arms up to keep your body balanced.\n\n-Actions:\nThe stepped out leg drops, driving the body forward, and the front foot lands on the ground and stands firm. Lift the back side leg back while opening both arms to the sides until the torso and back side leg are parallel to the ground. Pause briefly to maintain balance.\nReturn to standing position.\n\n-Tip:\nCoordinate the muscles of the legs and core to maintain balance and avoid large wobbles."
+  },
+  {
+    "id": "479528366698054273",
+    "name": "Bodyweight Lunges",
+    "codeName": "Bodyweight Lunges",
+    "overview": "Custom exercise for planned COROS workouts. Perform Bodyweight Lunges as prescribed in the workout notes.",
+    "muscle": [
+      7
+    ],
+    "muscleRelevance": [],
+    "part": [
+      5
+    ],
+    "equipment": [
+      1
+    ],
+    "exerciseType": 2,
+    "targetType": 3,
+    "targetValue": 15,
+    "intensityType": 1,
+    "intensityValue": 0,
+    "restType": 1,
+    "restValue": 30,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1786382373,
+    "thumbnailUrl": "",
+    "videoInfos": [],
+    "muscleText": "Glutes",
+    "secondaryMuscleText": "",
+    "partText": "Legs/Hips",
+    "equipmentText": "Bodyweight",
+    "desc": ""
   },
   {
     "id": "425845955863166976",
@@ -3644,41 +3753,69 @@
     "desc": "Starting Position:\nLie on the floor, knees at 90 degree angles and place your hands flat on the floor, arms extended.\n\r\nAction:\nRaise your buttocks from the floor as high as you comfortably can and lower it back down after a short pause.\n\r\nTips:\nYour feet and hands should not move throughout."
   },
   {
-    "id": "458241634738552842",
-    "name": "Bridging Psoas March",
-    "codeName": "Bridging Psoas March\n",
-    "overview": "start with feet on a box with legs fully extended and a small resistance band around the feet. Lift hips off the ground and maintains this hip height while one leg pulls into chest. ",
+    "id": "476762713375293440",
+    "name": "Burpee Broad Jumps",
+    "codeName": "T1396",
+    "overview": "sid_strength_burpee",
+    "animationId": 1,
     "muscle": [
+      7
+    ],
+    "muscleRelevance": [
+      4,
+      1,
+      2,
+      6,
+      8,
       14
     ],
-    "muscleRelevance": [],
     "part": [
-      5
+      0
     ],
     "equipment": [
-      9
+      1
     ],
     "exerciseType": 2,
-    "targetType": 3,
-    "targetValue": 15,
+    "targetType": 2,
+    "targetValue": 60,
     "intensityType": 1,
-    "intensityValue": 0,
     "restType": 1,
     "restValue": 30,
     "sets": 1,
     "sortNo": 0,
     "sportType": 4,
     "status": 1,
-    "createTimestamp": 1707083117,
-    "thumbnailUrl": "",
-    "sourceUrl": "",
-    "videoUrl": "",
-    "videoInfos": [],
-    "muscleText": "Posterior Thigh",
-    "secondaryMuscleText": "",
-    "partText": "Legs/Hips",
-    "equipmentText": "Medicine Ball",
-    "desc": ""
+    "createTimestamp": 1776079510,
+    "thumbnailUrl": "https://s3eu.coros.com/source/exercise_img/0/f8171776f4c24d70b2dd59192929413e.png",
+    "coverUrlArrStr": "https://s3eu.coros.com/source/exercise_img/0/f8171776f4c24d70b2dd59192929413e.png,https://s3eu.coros.com/source/exercise_img/0/98ab2c06f1d94263af71f5b225595313.png,https://s3eu.coros.com/source/exercise_img/0/0d23a3bcf4e34a779739080b45e2a7b7.png,https://s3eu.coros.com/source/exercise_img/0/567409c3755a4a7d8fa7df0e23ae18a0.png,https://s3eu.coros.com/source/exercise_img/0/06cb33e1ab554066a33e6e16dcc3fdcf.png",
+    "videoUrlArrStr": "https://s3eu.coros.com/source/exercise_gif/0/0519b769704f48a9afec00446def20c4.mp4,https://s3eu.coros.com/source/exercise_gif/0/a8c2d0083d134327be8f68897f51e4e5.mp4,https://s3eu.coros.com/source/exercise_gif/0/dd1e87e77f3448ebaeaeea4b86d5ea21.mp4,https://s3eu.coros.com/source/exercise_gif/0/4dbddc9fe48e47a2a50992f25b1b7d67.mp4,https://s3eu.coros.com/source/exercise_gif/0/be189be8c27e472780eb9c1df925c9ec.mp4",
+    "videoInfos": [
+      {
+        "coverUrl": "https://s3eu.coros.com/source/exercise_img/0/f8171776f4c24d70b2dd59192929413e.png",
+        "videoUrl": "https://s3eu.coros.com/source/exercise_gif/0/0519b769704f48a9afec00446def20c4.mp4"
+      },
+      {
+        "coverUrl": "https://s3eu.coros.com/source/exercise_img/0/98ab2c06f1d94263af71f5b225595313.png",
+        "videoUrl": "https://s3eu.coros.com/source/exercise_gif/0/a8c2d0083d134327be8f68897f51e4e5.mp4"
+      },
+      {
+        "coverUrl": "https://s3eu.coros.com/source/exercise_img/0/0d23a3bcf4e34a779739080b45e2a7b7.png",
+        "videoUrl": "https://s3eu.coros.com/source/exercise_gif/0/dd1e87e77f3448ebaeaeea4b86d5ea21.mp4"
+      },
+      {
+        "coverUrl": "https://s3eu.coros.com/source/exercise_img/0/567409c3755a4a7d8fa7df0e23ae18a0.png",
+        "videoUrl": "https://s3eu.coros.com/source/exercise_gif/0/4dbddc9fe48e47a2a50992f25b1b7d67.mp4"
+      },
+      {
+        "coverUrl": "https://s3eu.coros.com/source/exercise_img/0/06cb33e1ab554066a33e6e16dcc3fdcf.png",
+        "videoUrl": "https://s3eu.coros.com/source/exercise_gif/0/be189be8c27e472780eb9c1df925c9ec.mp4"
+      }
+    ],
+    "muscleText": "Glutes",
+    "secondaryMuscleText": "Triceps,Deltoids,Chest,Lower Back,Quadriceps,Posterior Thigh",
+    "partText": "Whole Body",
+    "equipmentText": "Bodyweight",
+    "desc": "Starting Point:\nStand with feet together and body upright behind the starting line.\n\nAction:\nDrop into a burpee until your chest touches the ground. Push back up into a squat position, then swing your arms to jump forward as far as possible.\n\nTips:\nTry to land softly to protect your joints. Maintain a fluid motion and minimize the rest time between the burpee and the jump."
   },
   {
     "id": "425827765602926593",
@@ -4934,6 +5071,39 @@
     "desc": "-Starting Position:\nTake a side plank position with the elbow of the supporting hand directly under the shoulder and the other side hand raised or crossed. Rest the inside calf of the supporting leg on the bench, keeping the supporting leg parallel to the floor.\n\n-Action:\nThe other leg is actively tucked in, as close to the supporting leg as possible. The body needs to be kept in a straight line, avoiding hip flexion or excessive hip jacking, and no lateral flexion at the waist."
   },
   {
+    "id": "479528366695956692",
+    "name": "Cossack Squat",
+    "codeName": "Cossack Squat",
+    "overview": "Custom exercise for planned COROS workouts. Perform Cossack Squat as prescribed in the workout notes.",
+    "muscle": [
+      7
+    ],
+    "muscleRelevance": [],
+    "part": [
+      5
+    ],
+    "equipment": [
+      1
+    ],
+    "exerciseType": 2,
+    "targetType": 3,
+    "targetValue": 15,
+    "intensityType": 1,
+    "intensityValue": 0,
+    "restType": 1,
+    "restValue": 30,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1786382373,
+    "thumbnailUrl": "",
+    "videoInfos": [],
+    "muscleText": "Glutes",
+    "secondaryMuscleText": "",
+    "partText": "Legs/Hips",
+    "equipmentText": "Bodyweight",
+    "desc": ""
+  },
+  {
     "id": "428453191601012736",
     "name": "Crawl On The Ground",
     "codeName": "T1182",
@@ -5312,6 +5482,39 @@
     "partText": "Shoulders",
     "equipmentText": "Bodyweight",
     "desc": "-Starting Position:\nLie on your back on the mat with your arms straight up perpendicular to the floor, palms facing each other or fists clenched.\nBend knees and raise legs with thighs perpendicular to the floor, calves parallel to the floor, and knees directly above hips.\n\n-Action:\nSlowly lower the opposite arm and leg, with the large arm close to the ear and the leg straightened out to the far side, both close to being parallel to the ground but not on the ground.\nCore power drives the limbs back to the starting position.\n\n-Tips:\nInhale as you lower and exhale as you return.\nControl the movement to minimize swaying."
+  },
+  {
+    "id": "479528366698054532",
+    "name": "Dead Hang",
+    "codeName": "Dead Hang",
+    "overview": "Custom exercise for planned COROS workouts. Perform Dead Hang as prescribed in the workout notes.",
+    "muscle": [
+      11
+    ],
+    "muscleRelevance": [],
+    "part": [
+      3
+    ],
+    "equipment": [
+      1
+    ],
+    "exerciseType": 2,
+    "targetType": 3,
+    "targetValue": 15,
+    "intensityType": 1,
+    "intensityValue": 0,
+    "restType": 1,
+    "restValue": 30,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1786382373,
+    "thumbnailUrl": "",
+    "videoInfos": [],
+    "muscleText": "Forearms",
+    "secondaryMuscleText": "",
+    "partText": "Back",
+    "equipmentText": "Bodyweight",
+    "desc": ""
   },
   {
     "id": "425832295182811136",
@@ -8633,6 +8836,39 @@
     "desc": "-Starting Position:\nStand with your feet shoulder-width apart or slightly wider than shoulder-width apart and your toes facing slightly diagonally forward. Raise both arms and hold a barbell above the anterior deltoid fascia, crossing your arms and gripping the barbell.\nKeep your back naturally straight and tuck your stomach and chest.\n\n-Action:\nSquat down, bending your knees and hips, with your knees oriented in line with your toes.\nSquat down until thighs are nearly parallel to the floor, pausing briefly.\nStomp and extend the lower leg to return to the starting position.\n\n-Cue:\nInhale as you squat and exhale as you rise.\nStop training when you experience discomfort.\nTighten your core throughout, keeping your back straight and maintaining body stability."
   },
   {
+    "id": "479528366698054033",
+    "name": "Full-ROM Calf Raise",
+    "codeName": "Full-ROM Calf Raise",
+    "overview": "Custom exercise for planned COROS workouts. Perform Full-ROM Calf Raise as prescribed in the workout notes.",
+    "muscle": [
+      13
+    ],
+    "muscleRelevance": [],
+    "part": [
+      5
+    ],
+    "equipment": [
+      1
+    ],
+    "exerciseType": 2,
+    "targetType": 3,
+    "targetValue": 15,
+    "intensityType": 1,
+    "intensityValue": 0,
+    "restType": 1,
+    "restValue": 30,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1786382372,
+    "thumbnailUrl": "",
+    "videoInfos": [],
+    "muscleText": "Calves",
+    "secondaryMuscleText": "",
+    "partText": "Legs/Hips",
+    "equipmentText": "Bodyweight",
+    "desc": ""
+  },
+  {
     "id": "469646833841520640",
     "name": "Glute Bridge Hold",
     "codeName": "T1229",
@@ -10356,6 +10592,39 @@
     "desc": "-Starting Position:\nBrace your hands on a higher platform, such as a stool or box. Hands are spaced shoulder-width apart or slightly wider than shoulder-width apart. Head, torso and legs are in a straight line.\n\n-Action:\nKeeping your body stable, slowly bend your elbows to lower your body, keeping your elbows close to your body. Pause briefly when the upper arm is nearly parallel to the ground. Push your body upward to return to the starting position.\nWhen performing the movement, always keep your core muscles tight and your back straight, do not collapse or pucker your hips. Keep your neck naturally extended and don't tilt your head up or down excessively.\n\n-Tip:\nInhale as you descend and exhale as you push up.\nStop training when experiencing discomfort.\nAdjust the range of descent based on flexibility and individual ability.\nDecrease the difficulty of the movement by increasing the height of the hands and decrease the height to increase the difficulty."
   },
   {
+    "id": "479528366698054433",
+    "name": "Incline Treadmill Uphill Interval",
+    "codeName": "Incline Treadmill Uphill Interval",
+    "overview": "Custom exercise for planned COROS workouts. Perform Incline Treadmill Uphill Interval as prescribed in the workout notes.",
+    "muscle": [
+      7
+    ],
+    "muscleRelevance": [],
+    "part": [
+      0
+    ],
+    "equipment": [
+      6
+    ],
+    "exerciseType": 2,
+    "targetType": 3,
+    "targetValue": 15,
+    "intensityType": 1,
+    "intensityValue": 0,
+    "restType": 1,
+    "restValue": 30,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1786382373,
+    "thumbnailUrl": "",
+    "videoInfos": [],
+    "muscleText": "Glutes",
+    "secondaryMuscleText": "",
+    "partText": "Whole Body",
+    "equipmentText": "Gym Equipment",
+    "desc": ""
+  },
+  {
     "id": "426801973975760896",
     "name": "Incline Walking",
     "codeName": "T1169",
@@ -10449,8 +10718,7 @@
     "exerciseType": 2,
     "targetType": 2,
     "targetValue": 30,
-    "intensityType": 1,
-    "intensityValue": 0,
+    "intensityType": 0,
     "restType": 1,
     "restValue": 30,
     "sets": 4,
@@ -11892,43 +12160,6 @@
     "desc": "-Starting Position:\nStand with your feet open and wide, toes pointed outward. Hands clasped in front of chest.\n\n-Action:\nSquat to one side, noting that the squatting leg is oriented in the same direction as the toes. Once the thigh is nearly parallel to the floor, pause briefly and return to the starting position. Alternate between right and left legs or complete one set with each leg on one side.\n\n-Tip:\nStop the movement if you experience discomfort.\nWeights can be used to make the movement more difficult."
   },
   {
-    "id": "458241167394521109",
-    "name": "Lateral step ups",
-    "codeName": "Lateral step ups",
-    "overview": "Lateral step-ups involve stepping one foot sideways onto a step and balancing on that leg as you hover the other foot off the floor. ",
-    "muscle": [
-      7
-    ],
-    "muscleRelevance": [],
-    "part": [
-      5
-    ],
-    "equipment": [
-      1
-    ],
-    "exerciseType": 2,
-    "targetType": 3,
-    "targetValue": 15,
-    "intensityType": 1,
-    "intensityValue": 0,
-    "restType": 1,
-    "restValue": 30,
-    "sets": 1,
-    "sortNo": 0,
-    "sportType": 4,
-    "status": 1,
-    "createTimestamp": 1707081376,
-    "thumbnailUrl": "",
-    "sourceUrl": "",
-    "videoUrl": "",
-    "videoInfos": [],
-    "muscleText": "Glutes",
-    "secondaryMuscleText": "",
-    "partText": "Legs/Hips",
-    "equipmentText": "Bodyweight",
-    "desc": ""
-  },
-  {
     "id": "428453257099264000",
     "name": "Lean Over And Touch Your Shoulders Alte",
     "codeName": "T1183",
@@ -12373,76 +12604,6 @@
     "partText": "Legs/Hips",
     "equipmentText": "Bodyweight",
     "desc": "Starting Position:\nLie flat on a yoga mat with your knees at a 90-degree Angle and place your hands flat on the floor with your arms at your sides.\n\r\nAction:\nRaise the hips and hips as high as possible, leaving the rest of the body as it is, and lowering them slowly after a brief pause.\n\r\nTips:\nPay attention to the power source, do not use your hands and feet for power."
-  },
-  {
-    "id": "458241748018315274",
-    "name": "Loaded carry",
-    "codeName": "Loaded carry",
-    "overview": "Heavy weight in each hand. Axial loading for bones. Walk. Each step lift knee up for single leg exercise purpose. Do 20 steps. ",
-    "muscle": [],
-    "muscleRelevance": [],
-    "part": [
-      0
-    ],
-    "equipment": [
-      11
-    ],
-    "exerciseType": 2,
-    "targetType": 3,
-    "targetValue": 15,
-    "intensityType": 1,
-    "intensityValue": 0,
-    "restType": 1,
-    "restValue": 30,
-    "sets": 1,
-    "sortNo": 0,
-    "sportType": 4,
-    "status": 1,
-    "createTimestamp": 1707083539,
-    "thumbnailUrl": "",
-    "sourceUrl": "",
-    "videoUrl": "",
-    "videoInfos": [],
-    "muscleText": "",
-    "secondaryMuscleText": "",
-    "partText": "Whole Body",
-    "equipmentText": "Kettlebell",
-    "desc": ""
-  },
-  {
-    "id": "458241868816367621",
-    "name": "Loaded creeper march",
-    "codeName": "Loaded creeper march",
-    "overview": "Hold heavyweight in hands. Bend slightly at knees. Walk on tip toes. Exercises soleus muscle. ",
-    "muscle": [
-      15
-    ],
-    "muscleRelevance": [],
-    "part": [
-      5
-    ],
-    "equipment": [],
-    "exerciseType": 2,
-    "targetType": 3,
-    "targetValue": 15,
-    "intensityType": 1,
-    "intensityValue": 0,
-    "restType": 1,
-    "restValue": 30,
-    "sets": 1,
-    "sortNo": 0,
-    "sportType": 4,
-    "status": 1,
-    "createTimestamp": 1707083989,
-    "thumbnailUrl": "",
-    "sourceUrl": "",
-    "videoUrl": "",
-    "videoInfos": [],
-    "muscleText": "Hip Flexors",
-    "secondaryMuscleText": "",
-    "partText": "Legs/Hips",
-    "equipmentText": "",
-    "desc": ""
   },
   {
     "id": "425831365053956096",
@@ -14601,6 +14762,39 @@
     "desc": "Starting Position:\nWhile sitting on the machine, adjust the seat height so that the handle is at shoulder height and the arms are slightly bent.\n\r\nAction:\nWith both hands open and hold the handles on each side, pull the instrument from both sides to the center with chest force, pause briefly and slowly return to the Starting Position.\n\r\nTips:\nDo not open the arms too far (open to the back of the plane is ok), so as not to hurt the shoulder joint, the weight is not too heavy, adduction pause for 3 seconds, fully squeeze the pectoralis major."
   },
   {
+    "id": "479528366695956693",
+    "name": "Pendulum Squat",
+    "codeName": "Pendulum Squat",
+    "overview": "Custom exercise for planned COROS workouts. Perform Pendulum Squat as prescribed in the workout notes.",
+    "muscle": [
+      8
+    ],
+    "muscleRelevance": [],
+    "part": [
+      5
+    ],
+    "equipment": [
+      6
+    ],
+    "exerciseType": 2,
+    "targetType": 3,
+    "targetValue": 15,
+    "intensityType": 1,
+    "intensityValue": 0,
+    "restType": 1,
+    "restValue": 30,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1786382373,
+    "thumbnailUrl": "",
+    "videoInfos": [],
+    "muscleText": "Quadriceps",
+    "secondaryMuscleText": "",
+    "partText": "Legs/Hips",
+    "equipmentText": "Gym Equipment",
+    "desc": ""
+  },
+  {
     "id": "469646951147814912",
     "name": "Pike Push-Up",
     "codeName": "T1235",
@@ -15379,43 +15573,6 @@
     "partText": "Arms",
     "equipmentText": "Barbells,Gym Equipment",
     "desc": "Starting Position:\nPlace your upper arms against the arm rests and grab the easy-curl-bar with your arms close to being fully extended.\n\r\nAction:\nRaise the easy-curl-bar up until your forearms are perpendicular to the floor and lower it back down after a short pause.\n\r\nTips:\nKeep your back and upper arms still throughout."
-  },
-  {
-    "id": "458241289798991888",
-    "name": "Prisoner Calf raise",
-    "codeName": "Prisoner Calf raise",
-    "overview": "Hands behind head. One foot on box. Calf raise by pushing foot of floor. ",
-    "muscle": [
-      15
-    ],
-    "muscleRelevance": [],
-    "part": [
-      5
-    ],
-    "equipment": [
-      1
-    ],
-    "exerciseType": 2,
-    "targetType": 3,
-    "targetValue": 15,
-    "intensityType": 1,
-    "intensityValue": 0,
-    "restType": 1,
-    "restValue": 30,
-    "sets": 1,
-    "sortNo": 0,
-    "sportType": 4,
-    "status": 1,
-    "createTimestamp": 1707081832,
-    "thumbnailUrl": "",
-    "sourceUrl": "",
-    "videoUrl": "",
-    "videoInfos": [],
-    "muscleText": "Hip Flexors",
-    "secondaryMuscleText": "",
-    "partText": "Legs/Hips",
-    "equipmentText": "Bodyweight",
-    "desc": ""
   },
   {
     "id": "469654977636384768",
@@ -17787,7 +17944,40 @@
     "secondaryMuscleText": "Latissimus Dorsi",
     "partText": "Back,Arms",
     "equipmentText": "Bosu Ball",
-    "desc": "Starting Position:\nHold a D - shaped handle or straight grip and attach it to a high pulley.Stand 40 to 50 cm away from the puller.Keep your feet spaced out, toes pointing out, knees slightly bent.Keep your feet firmly on the spot, hold the bar in both hands, and slowly turn, keeping your stomach and back straight and under pressure.\n\r\nAction:\nPull the handle from the Starting Position to the Position of the other foot with both arms. After a short stay, slowly return to the Starting Position.\n\r\nTips:\nIn the process of restoring the Starting Position, it is necessary to maintain a certain speed with the strength of both arms."
+    "desc": "Starting Position:\nSit upright on the machine seat. Grasp the overhead bar with both hands, arms fully extended.\n\nAction:\nPull the bar down toward your upper chest until you cannot pull further. Pause briefly, then slowly return to the starting position.\n\nTips:\nControl the upward return with arm tension; do not release completely or let the weight drop freely."
+  },
+  {
+    "id": "479528366964392135",
+    "name": "Seated Leg Curl",
+    "codeName": "Seated Leg Curl",
+    "overview": "Custom exercise for planned COROS workouts. Perform Seated Leg Curl as prescribed in the workout notes.",
+    "muscle": [
+      14
+    ],
+    "muscleRelevance": [],
+    "part": [
+      5
+    ],
+    "equipment": [
+      6
+    ],
+    "exerciseType": 2,
+    "targetType": 3,
+    "targetValue": 15,
+    "intensityType": 1,
+    "intensityValue": 0,
+    "restType": 1,
+    "restValue": 30,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1786382373,
+    "thumbnailUrl": "",
+    "videoInfos": [],
+    "muscleText": "Posterior Thigh",
+    "secondaryMuscleText": "",
+    "partText": "Legs/Hips",
+    "equipmentText": "Gym Equipment",
+    "desc": ""
   },
   {
     "id": "425831107355918337",
@@ -19187,6 +19377,53 @@
     "desc": "Starting Position:\nLie down on the bench, knees at 90 degree angles, feet stabilized by the foot pads and place your hands behind your ears.\n\r\nAction:\nRoll your upper body up until your elbows touch your knees (or close to it) and lower yourself back down after a short pause.\n\r\nTips:\nTo avoid pulling your neck with your hands, look straight up instead of looking at your knees."
   },
   {
+    "id": "476760420131192832",
+    "name": "Ski Erg",
+    "codeName": "T1393",
+    "overview": "sid_strength_skierg",
+    "animationId": 375,
+    "muscle": [
+      12
+    ],
+    "muscleRelevance": [
+      4,
+      6,
+      14,
+      1
+    ],
+    "part": [
+      0
+    ],
+    "equipment": [
+      16
+    ],
+    "exerciseType": 2,
+    "targetType": 2,
+    "targetValue": 60,
+    "intensityType": 0,
+    "restType": 1,
+    "restValue": 30,
+    "sets": 1,
+    "sortNo": 0,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1776070967,
+    "thumbnailUrl": "https://s3eu.coros.com/source/exercise_img/0/4b5473e8d3f24d9aa1a4883b277c302b.png",
+    "coverUrlArrStr": "https://s3eu.coros.com/source/exercise_img/0/4b5473e8d3f24d9aa1a4883b277c302b.png",
+    "videoUrlArrStr": "https://s3eu.coros.com/source/exercise_gif/0/7e7962ecd5cd4125bb257bb227132f33.mp4",
+    "videoInfos": [
+      {
+        "coverUrl": "https://s3eu.coros.com/source/exercise_img/0/4b5473e8d3f24d9aa1a4883b277c302b.png",
+        "videoUrl": "https://s3eu.coros.com/source/exercise_gif/0/7e7962ecd5cd4125bb257bb227132f33.mp4"
+      }
+    ],
+    "muscleText": "Biceps",
+    "secondaryMuscleText": "Triceps,Lower Back,Posterior Thigh,Deltoids",
+    "partText": "Whole Body",
+    "equipmentText": "16",
+    "desc": "Starting Point:\nStand facing the SkiErg with feet shoulder-width apart. Reach up and grasp the handles with arms extended above your head, elbows slightly bent, and core engaged.\n\nAction:\nEngage your core and pull the handles downward and backward while driving your hips back into a hinge position. After the arms pass the thighs, use the momentum to return to the starting point.\n\nTips:\nUse your body weight to drive the handles down, not just your arm strength. Maintain a steady rhythm and exhale on the pull."
+  },
+  {
     "id": "426939619892969472",
     "name": "Ski Step",
     "codeName": "T1174",
@@ -19312,6 +19549,135 @@
     "partText": "Whole Body,Legs/Hips",
     "equipmentText": "16",
     "desc": "Starting Position:\nHold the jump rope with both hands in a standing Position.\n\nAction:\nShake both hands in one direction and jump with both legs.Repeat until scheduled.\n\r\nTips:\nKeep your body in rhythm and balance."
+  },
+  {
+    "id": "476761463271374848",
+    "name": "Sled Pull",
+    "codeName": "T1395",
+    "overview": "sid_strength_sledpull",
+    "animationId": 374,
+    "muscle": [
+      12
+    ],
+    "muscleRelevance": [
+      3,
+      11,
+      14,
+      8
+    ],
+    "part": [
+      0
+    ],
+    "equipment": [
+      16
+    ],
+    "exerciseType": 2,
+    "targetType": 2,
+    "targetValue": 60,
+    "intensityType": 1,
+    "intensityValue": 78000,
+    "restType": 1,
+    "restValue": 60,
+    "sets": 1,
+    "sortNo": 0,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1776074853,
+    "thumbnailUrl": "https://s3eu.coros.com/source/exercise_img/0/3e9f19ad874e471fa3adcd4666f4b5f4.png",
+    "coverUrlArrStr": "https://s3eu.coros.com/source/exercise_img/0/3e9f19ad874e471fa3adcd4666f4b5f4.png",
+    "videoUrlArrStr": "https://s3eu.coros.com/source/exercise_gif/0/9a783bdae387461dbf254798e8c6aa09.mp4",
+    "videoInfos": [
+      {
+        "coverUrl": "https://s3eu.coros.com/source/exercise_img/0/3e9f19ad874e471fa3adcd4666f4b5f4.png",
+        "videoUrl": "https://s3eu.coros.com/source/exercise_gif/0/9a783bdae387461dbf254798e8c6aa09.mp4"
+      }
+    ],
+    "muscleText": "Biceps",
+    "secondaryMuscleText": "Latissimus Dorsi,Forearms,Posterior Thigh,Quadriceps",
+    "partText": "Whole Body",
+    "equipmentText": "16",
+    "desc": "Starting Point:\nStand behind the designated line with a firm, stable stance. Grasp the rope with both hands and lean your body weight slightly backward.\n\nAction:\nPull the rope toward you using an alternating hand-over-hand motion or by stepping backward to drag the sled. Coordinate power from your legs, core, and back.\n\nTips:\nKeep your core braced to protect your lower back. Ensure the sled fully crosses the designated finish line before finishing."
+  },
+  {
+    "id": "476761244228042852",
+    "name": "Sled Push",
+    "codeName": "T1394",
+    "overview": "sid_strength_sledpush",
+    "animationId": 377,
+    "muscle": [
+      7
+    ],
+    "muscleRelevance": [
+      14,
+      8,
+      15,
+      13
+    ],
+    "part": [
+      0
+    ],
+    "equipment": [
+      16
+    ],
+    "exerciseType": 2,
+    "targetType": 2,
+    "targetValue": 60,
+    "intensityType": 1,
+    "intensityValue": 102000,
+    "restType": 1,
+    "restValue": 30,
+    "sets": 1,
+    "sortNo": 0,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1776074038,
+    "thumbnailUrl": "https://s3eu.coros.com/source/exercise_img/0/44aafcb71c954637a65dc81e5c0d822b.png",
+    "coverUrlArrStr": "https://s3eu.coros.com/source/exercise_img/0/44aafcb71c954637a65dc81e5c0d822b.png",
+    "videoUrlArrStr": "https://s3eu.coros.com/source/exercise_gif/0/b5714416b90f4ffcab2cefade83bb4e2.mp4",
+    "videoInfos": [
+      {
+        "coverUrl": "https://s3eu.coros.com/source/exercise_img/0/44aafcb71c954637a65dc81e5c0d822b.png",
+        "videoUrl": "https://s3eu.coros.com/source/exercise_gif/0/b5714416b90f4ffcab2cefade83bb4e2.mp4"
+      }
+    ],
+    "muscleText": "Glutes",
+    "secondaryMuscleText": "Posterior Thigh,Quadriceps,Hip Flexors,Calves",
+    "partText": "Whole Body",
+    "equipmentText": "16",
+    "desc": "Starting Point:\nGrip the sled uprights with arms extended, or press your upper arms and shoulders against the poles while grasping them. Lean your body forward at a 45-degree angle with your feet firmly planted.\n\nAction:\nDrive through the balls of your feet using explosive leg power, keeping your torso stable to push the sled forward. Take small, powerful steps to ensure continuous force transfer.\n\nTips:\nPressing your upper arms/shoulders against the poles allows for a more direct transfer of power from your torso. Keep your back straight and avoid rounding."
+  },
+  {
+    "id": "479528366698054272",
+    "name": "Sled Push",
+    "codeName": "Sled Push",
+    "overview": "Custom exercise for planned COROS workouts. Perform Sled Push as prescribed in the workout notes.",
+    "muscle": [
+      8
+    ],
+    "muscleRelevance": [],
+    "part": [
+      0
+    ],
+    "equipment": [
+      6
+    ],
+    "exerciseType": 2,
+    "targetType": 3,
+    "targetValue": 15,
+    "intensityType": 1,
+    "intensityValue": 0,
+    "restType": 1,
+    "restValue": 30,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1786382373,
+    "thumbnailUrl": "",
+    "videoInfos": [],
+    "muscleText": "Quadriceps",
+    "secondaryMuscleText": "",
+    "partText": "Whole Body",
+    "equipmentText": "Gym Equipment",
+    "desc": ""
   },
   {
     "id": "428907861402370048",
@@ -19628,43 +19994,6 @@
     "partText": "Legs/Hips,1",
     "equipmentText": "Kettlebell",
     "desc": "Starting Position:\nStand above the kettlebell with your feet shoulder-width apart.\n\nAction:\nGradually bend your knees slightly and let your right hand drop until you reach the kettlebell handle.The right hand forcefully throws the kettlebell from the middle of the legs to the back of the body, explosively contract the buttocks and leg muscles, and forcefully pushes the heel off the ground to stand the body in a straight line. At the same time, bending the right elbow, pull the kettlebell toward the body, making the kettlebell moving track close to the body.When the kettlebell swings to the height of the head, the right hand quickly passes through the kettlebell handle, connects the kettlebell to the forearm of the right hand, and maintains the kettlebell to the top support position, maintaining the neutral position of the wrist.\nWhen falling, push the kettlebell with a little force with your finger, then hook the kettlebell with your finger and swing it down, then return to the original position, repeat the action until recommended times.\n\nTip:\nKeep the rhythm and keep your back straight and unbent."
-  },
-  {
-    "id": "458241442540863492",
-    "name": "Soleus raise",
-    "codeName": "Soleus raise",
-    "overview": "Face a wall for balance. Feet shoulder width apart. Bend at knees slightly. Push up from toes to raise heels of the ground. Lower slowly. ",
-    "muscle": [
-      15
-    ],
-    "muscleRelevance": [],
-    "part": [
-      5
-    ],
-    "equipment": [
-      1
-    ],
-    "exerciseType": 2,
-    "targetType": 3,
-    "targetValue": 15,
-    "intensityType": 1,
-    "intensityValue": 0,
-    "restType": 1,
-    "restValue": 30,
-    "sets": 1,
-    "sortNo": 0,
-    "sportType": 4,
-    "status": 1,
-    "createTimestamp": 1707082401,
-    "thumbnailUrl": "",
-    "sourceUrl": "",
-    "videoUrl": "",
-    "videoInfos": [],
-    "muscleText": "Hip Flexors",
-    "secondaryMuscleText": "",
-    "partText": "Legs/Hips",
-    "equipmentText": "Bodyweight",
-    "desc": ""
   },
   {
     "id": "426801647558246401",
@@ -22235,6 +22564,39 @@
     "desc": "-Starting Position:\nLie on your side with your legs stacked 90° at hip and knee flexion, or one knee pressed against the foam shaft, you need to ensure pelvic stability.\nHands are positioned in front of the chest with arms straight.\n\n-Action:\nThe outer arm opens back, rotating the thoracic spine backwards, like \"\"opening a book\"\", until the arm touches the floor.\nFollow the original trajectory back to the starting position.\nThe head rotates with the arm and the eyes follow the moving hand.\n\n-Tips:\nKeep your pelvis and lower extremities stable and avoid lifting your hips or separating your knees."
   },
   {
+    "id": "479528366695956496",
+    "name": "Tibialis Raise",
+    "codeName": "Tibialis Raise",
+    "overview": "Custom exercise for planned COROS workouts. Perform Tibialis Raise as prescribed in the workout notes.",
+    "muscle": [
+      13
+    ],
+    "muscleRelevance": [],
+    "part": [
+      5
+    ],
+    "equipment": [
+      1
+    ],
+    "exerciseType": 2,
+    "targetType": 3,
+    "targetValue": 15,
+    "intensityType": 1,
+    "intensityValue": 0,
+    "restType": 1,
+    "restValue": 30,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1786382372,
+    "thumbnailUrl": "",
+    "videoInfos": [],
+    "muscleText": "Calves",
+    "secondaryMuscleText": "",
+    "partText": "Legs/Hips",
+    "equipmentText": "Bodyweight",
+    "desc": ""
+  },
+  {
     "id": "469654912138133504",
     "name": "Toe Touch Sweep",
     "codeName": "T1272",
@@ -22299,6 +22661,39 @@
     "partText": "Shoulders,Legs/Hips",
     "equipmentText": "Bodyweight",
     "desc": "-Starting Position:\nStand with your feet shoulder-width apart, keeping your spine naturally straight and your core tight.\n\n-Action:\nTake a small step forward with one foot on one side, hook your toes, straighten your leg, bend at the hip, and feel the stretch in the back of your leg by rowing your hands to the front foot while bending your back leg.\nRise back to a standing position and switch legs for the exercise.\n\n-Tip:\nYou can practice this in place or alternate as you march.\nExhale as you bend down and inhale as you rise up.\nControl the range of motion based on flexibility."
+  },
+  {
+    "id": "479528366698054034",
+    "name": "Towel Hang",
+    "codeName": "Towel Hang",
+    "overview": "Custom exercise for planned COROS workouts. Perform Towel Hang as prescribed in the workout notes.",
+    "muscle": [
+      11
+    ],
+    "muscleRelevance": [],
+    "part": [
+      3
+    ],
+    "equipment": [
+      1
+    ],
+    "exerciseType": 2,
+    "targetType": 3,
+    "targetValue": 15,
+    "intensityType": 1,
+    "intensityValue": 0,
+    "restType": 1,
+    "restValue": 30,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1786382373,
+    "thumbnailUrl": "",
+    "videoInfos": [],
+    "muscleText": "Forearms",
+    "secondaryMuscleText": "",
+    "partText": "Back",
+    "equipmentText": "Bodyweight",
+    "desc": ""
   },
   {
     "id": "425898928110747649",
@@ -23284,6 +23679,49 @@
     "desc": "Starting Position:\nKeep your front feet crouched directly above the kettlebell.\n\nAction;\nSqueeze the hips and legs, grab the kettlebell with both hands and swing it up between the legs. At the top of the kettlebell swing, extend the hip joint, lock the knee, root into the ground, tighten the core and squeeze the hips.\n\nTip:\nKeep the rhythm of the exercise, keep your back straight and avoid shaking."
   },
   {
+    "id": "478227457076543788",
+    "name": "Typewriter Pull-ups",
+    "codeName": "Typewriter Pull-ups",
+    "overview": "",
+    "animationId": 0,
+    "muscle": [
+      12
+    ],
+    "muscleRelevance": [
+      3,
+      5,
+      1
+    ],
+    "part": [
+      3,
+      6
+    ],
+    "equipment": [
+      1
+    ],
+    "exerciseType": 2,
+    "targetType": 3,
+    "targetValue": 15,
+    "intensityType": 1,
+    "intensityValue": 0,
+    "restType": 1,
+    "restValue": 30,
+    "sets": 1,
+    "sortNo": 0,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1781536106,
+    "thumbnailUrl": "",
+    "sourceUrl": "",
+    "videoUrl": "",
+    "videoInfos": [],
+    "muscleText": "Biceps",
+    "secondaryMuscleText": "Latissimus Dorsi,Abs,Deltoids",
+    "partText": "Back,Arms",
+    "equipmentText": "Bodyweight",
+    "desc": ""
+  },
+  {
     "id": "426617687129636865",
     "name": "Unilateral Supine Buttocks Lift Hip Lif",
     "codeName": "T1133",
@@ -23601,6 +24039,54 @@
     "partText": "Legs/Hips",
     "equipmentText": "Bodyweight",
     "desc": "-Starting Position:\nStand in a standing position with your hands naturally down or crossed.\n\n-Action:\nKeeping your body stable, take a large step forward with one leg. The front leg lands with the knee bent and the thigh parallel to the ground. Bend the back leg with the thigh perpendicular to the ground and the toes touching the ground.\nRise up, switch legs and step forward until you form a lunge again. Alternate this movement.\nSwing your hands naturally or cross your arms for balance during the march.\n\n-Tip:\nMaintain balance and avoid swaying while marching."
+  },
+  {
+    "id": "476762944229785600",
+    "name": "Wall Balls",
+    "codeName": "T1397",
+    "overview": "sid_strength_wallballs",
+    "animationId": 376,
+    "muscle": [
+      7
+    ],
+    "muscleRelevance": [
+      14,
+      1,
+      4,
+      6
+    ],
+    "part": [
+      0
+    ],
+    "equipment": [
+      10
+    ],
+    "exerciseType": 2,
+    "targetType": 2,
+    "targetValue": 60,
+    "intensityType": 1,
+    "intensityValue": 4000,
+    "restType": 1,
+    "restValue": 30,
+    "sets": 1,
+    "sortNo": 0,
+    "sportType": 4,
+    "status": 1,
+    "createTimestamp": 1776080370,
+    "thumbnailUrl": "https://s3eu.coros.com/source/exercise_img/0/5cfa892f797547719dbc7e6cd9f9e8a3.png",
+    "coverUrlArrStr": "https://s3eu.coros.com/source/exercise_img/0/5cfa892f797547719dbc7e6cd9f9e8a3.png",
+    "videoUrlArrStr": "https://s3eu.coros.com/source/exercise_gif/0/83b3707789d845be8729a331ab93695a.mp4",
+    "videoInfos": [
+      {
+        "coverUrl": "https://s3eu.coros.com/source/exercise_img/0/5cfa892f797547719dbc7e6cd9f9e8a3.png",
+        "videoUrl": "https://s3eu.coros.com/source/exercise_gif/0/83b3707789d845be8729a331ab93695a.mp4"
+      }
+    ],
+    "muscleText": "Glutes",
+    "secondaryMuscleText": "Posterior Thigh,Deltoids,Triceps,Lower Back",
+    "partText": "Whole Body",
+    "equipmentText": "Bench",
+    "desc": "Starting Point: Stand facing the wall with feet slightly wider than shoulder-width. Hold the medicine ball at chest height, cupping the bottom of the ball. Action: Perform a full squat until thighs are below parallel. Drive up explosively and throw the ball to hit the target at the required height. Catch the ball and go directly into the next squat. Tips: Use the squat movement to absorb the ball's impact upon catching. Always keep your eyes on the target."
   },
   {
     "id": "469646870080307200",

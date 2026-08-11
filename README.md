@@ -107,3 +107,108 @@ npm test           # Run unit tests
 npm run test:watch # Watch mode
 npm run build      # Compile TypeScript
 ```
+
+## Training plans and calendar scheduling
+
+The tools below use COROS Training Hub’s consumer endpoints. They are not public
+or supported APIs and may change without notice. They work with the existing
+Training Hub `accesstoken` authentication and preserve the selected EU/US
+region. They do **not** use the official partner API credentials.
+
+All new write tools default to `dryRun: true`. A dry run may read your workout
+library or calendar to resolve IDs and construct a request, but it never sends a
+write. Set `dryRun: false` deliberately to make a write. No live write was made
+while developing this release.
+
+| Tool | Arguments | Notes |
+|---|---|---|
+| `list_training_plans` | `status`: `active`, `completed`, or `all` | Read-only plan library. |
+| `get_training_plan` | `planId` | Read-only detail and workout placement data. |
+| `create_training_plan` | `name`, `description`, `weeks`, optional `startDate`, `dryRun` | References existing workouts by `workoutId` (preferred) or exact `workoutName`. Every placement has exactly one `weekday` or `date`. Exact dates require `startDate` and must fall in their declared week. |
+| `list_training_calendar` | `startDate`, `endDate` | Inclusive ISO `YYYY-MM-DD` range. |
+| `schedule_workout` | exactly one of `workoutId` / `workoutName`, `date`, `timezone`, `allowExistingEntries`, `dryRun` | Validates an IANA timezone. It refuses to add to a non-empty day unless `allowExistingEntries: true`; it never replaces existing entries. Exact name matches that are ambiguous fail. |
+| `remove_scheduled_workout` | `date`, `scheduledWorkoutId`, `confirm`, `dryRun` | Optional private-API support. A live removal requires both `dryRun: false` and `confirm: true`. |
+| `list_custom_exercises` | none | Lists Strength records marked user-accessible (`access=1`) by COROS. |
+| `create_custom_exercise` | `name`, `description`, `bodyPart`, optional `primaryMuscle`, `equipment`, `dryRun` | Standard Strength only; see limitations below. |
+
+`list_workouts` now includes the stable workout ID where COROS returns one. Use
+that ID for plan and calendar writes rather than a name.
+
+### Examples
+
+Create a four-workout weekly strength plan (dry run):
+
+```json
+{
+  "name": "Four-day strength",
+  "description": "Upper/lower split",
+  "weeks": [
+    { "workouts": [
+      { "workoutId": "123", "weekday": "monday" },
+      { "workoutId": "124", "weekday": "tuesday" },
+      { "workoutId": "125", "weekday": "thursday" },
+      { "workoutId": "126", "weekday": "saturday" }
+    ] }
+  ]
+}
+```
+
+Schedule a library workout on an exact date (dry run):
+
+```json
+{
+  "workoutId": "123",
+  "date": "2026-08-17",
+  "timezone": "Europe/London"
+}
+```
+
+List upcoming calendar entries:
+
+```json
+{
+  "startDate": "2026-08-17",
+  "endDate": "2026-08-31"
+}
+```
+
+Create a custom Standard Strength exercise (dry run):
+
+```json
+{
+  "name": "Half-kneeling cable press",
+  "description": "Control the return.",
+  "bodyPart": "Shoulders",
+  "primaryMuscle": "Deltoids",
+  "equipment": "Gym Equipment"
+}
+```
+
+### Custom exercise limitations
+
+The deployed Training Hub Strength editor confirms `POST /training/exercise/add`
+for Standard Strength exercises. Its verified form supports one body part, one
+optional primary muscle, and one optional equipment value. It always supplies
+COROS defaults of 3 × 15 reps, 30 seconds rest, and weight intensity. Secondary
+muscles, custom target defaults, custom repetitions/duration, and custom rest
+are not exposed by that verified form, so this MCP does not pretend to support
+them.
+
+COROS’s [workout help](https://support.coros.com/hc/en-us/articles/47285577958932-Create-Custom-Workouts-in-Your-COROS-App)
+says that Hybrid Fitness Functional Training can choose a custom exercise.
+However, the Training Hub consumer request/payload for that compatibility was
+not verified. `create_custom_exercise` therefore supports Standard Strength
+only, and Hybrid Fitness / Functional Training is documented as unsupported
+rather than simulated.
+
+### Authentication and partner API distinction
+
+COROS’s documented partner Training Plan API has a schedule-push endpoint:
+`POST https://open.coros.com/coros/tp/list/push`. It requires a partner-linked
+`token` and `openId`, not the Training Hub `accesstoken` and Training Hub user
+ID stored by this MCP. Partner credentials are therefore required; existing
+MCP authentication cannot safely call it. The partner endpoint is not used by
+these tools.
+
+See [docs/training-plan-calendar-discovery.md](docs/training-plan-calendar-discovery.md)
+for endpoint sources and confidence levels.
