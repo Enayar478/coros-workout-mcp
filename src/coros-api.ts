@@ -9,6 +9,12 @@ import type {
   ExercisePayload,
   RawExercise,
   Region,
+  ScheduleUpdatePayload,
+  CustomStrengthExercisePayload,
+  TrainingCalendarResponse,
+  TrainingPlanDetail,
+  TrainingPlanListItem,
+  TrainingPlanPayload,
   WorkoutPayload,
 } from "./types.js";
 import {
@@ -500,4 +506,135 @@ export async function queryWorkouts(
     sportType: options.sportType ?? 0,
   };
   return apiPost(auth, "/training/program/query", body);
+}
+
+
+// --- Private Training Hub plan and calendar API ---
+// Paths and methods were confirmed from the deployed Training Hub client on
+// 2026-08-10. COROS does not publish this consumer API; keep changes here.
+export const TRAINING_HUB_PRIVATE_ENDPOINTS = {
+  trainingPlanQuery: "/training/plan/query",
+  trainingPlanDetail: "/training/plan/detail",
+  trainingPlanAdd: "/training/plan/add",
+  programDetail: "/training/program/detail",
+  scheduleQuery: "/training/schedule/query",
+  scheduleUpdate: "/training/schedule/update",
+  customStrengthExerciseAdd: "/training/exercise/add",
+} as const;
+
+export type PlanProgramPlacement = {
+  dayNo: number;
+  sortNoInSchedule: number;
+  program: Record<string, unknown>;
+};
+
+export async function queryTrainingPlans(
+  auth: AuthData,
+  statusList: number[] = [1, 2]
+): Promise<TrainingPlanListItem[]> {
+  const result = (await apiPost(auth, TRAINING_HUB_PRIVATE_ENDPOINTS.trainingPlanQuery, {
+    statusList,
+  })) as { data?: TrainingPlanListItem[] };
+  return result.data || [];
+}
+
+export async function getTrainingPlan(auth: AuthData, id: string): Promise<TrainingPlanDetail> {
+  const result = (await apiGet(auth, TRAINING_HUB_PRIVATE_ENDPOINTS.trainingPlanDetail, {
+    id, supportRestExercise: 1,
+  })) as { data?: TrainingPlanDetail };
+  if (!result.data) throw new Error("COROS returned no training-plan detail.");
+  return result.data;
+}
+
+export async function getWorkoutDetail(auth: AuthData, id: string): Promise<Record<string, unknown>> {
+  const result = (await apiGet(auth, TRAINING_HUB_PRIVATE_ENDPOINTS.programDetail, {
+    id, supportRestExercise: 1,
+  })) as { data?: Record<string, unknown> };
+  if (!result.data) throw new Error(`COROS returned no workout detail for "${id}".`);
+  return result.data;
+}
+
+export async function queryTrainingCalendar(
+  auth: AuthData, startDate: string, endDate: string
+): Promise<TrainingCalendarResponse> {
+  const result = (await apiGet(auth, TRAINING_HUB_PRIVATE_ENDPOINTS.scheduleQuery, {
+    startDate: startDate.replaceAll("-", ""),
+    endDate: endDate.replaceAll("-", ""),
+    supportRestExercise: 1,
+  })) as { data?: TrainingCalendarResponse };
+  return result.data || { entities: [], programs: [], maxIdInPlan: 0 };
+}
+
+export function buildTrainingPlanPayload(
+  name: string, overview: string, placements: PlanProgramPlacement[], region: Region, unit = 0
+): TrainingPlanPayload {
+  if (placements.length === 0) throw new Error("A training plan must contain at least one workout.");
+  const ordered = [...placements].sort((a, b) => a.dayNo - b.dayNo || a.sortNoInSchedule - b.sortNoInSchedule);
+  const weekCounts = new Map<number, number>();
+  const entities = ordered.map((placement, index) => {
+    const idInPlan = index + 1;
+    const week = Math.floor(placement.dayNo / 7);
+    weekCounts.set(week, (weekCounts.get(week) || 0) + 1);
+    return { happenDay: "", idInPlan, sortNo: 0, dayNo: placement.dayNo,
+      sortNoInPlan: placement.sortNoInSchedule, sortNoInSchedule: placement.sortNoInSchedule };
+  });
+  const counts = [...weekCounts.values()].sort((a, b) => a - b);
+  return {
+    name, overview, entities,
+    programs: ordered.map((placement, index) => ({ ...placement.program, idInPlan: index + 1, happenDay: "" })),
+    weekStages: [], maxIdInPlan: ordered.length,
+    totalDay: Math.max(...ordered.map((placement) => placement.dayNo)) + 1,
+    unit, sourceId: "425868133463670784",
+    sourceUrl: DEFAULT_SOURCE_URL, minWeeks: counts[0] || 0,
+    maxWeeks: counts[counts.length - 1] || 0, region: region === "eu" ? 3 : 1,
+    pbVersion: 2, versionObjects: ordered.map((_, index) => ({ id: index + 1, status: 1 })),
+  };
+}
+
+export async function addTrainingPlan(auth: AuthData, payload: TrainingPlanPayload): Promise<unknown> {
+  return apiPost(auth, TRAINING_HUB_PRIVATE_ENDPOINTS.trainingPlanAdd, payload);
+}
+
+export function buildScheduleWorkoutPayload(
+  workout: Record<string, unknown>, isoDate: string, idInPlan: number, sortNoInSchedule = 0
+): ScheduleUpdatePayload {
+  return {
+    entities: [{ happenDay: isoDate.replaceAll("-", ""), idInPlan, sortNoInSchedule }],
+    programs: [{ ...workout, idInPlan }],
+    versionObjects: [{ id: idInPlan, status: 1 }], pbVersion: 2,
+  };
+}
+
+export function buildRemoveScheduledWorkoutPayload(entry: {
+  idInPlan: number; planId?: string | number; planProgramId?: string | number; labelId?: string | number;
+}): ScheduleUpdatePayload {
+  return {
+    versionObjects: [{ id: entry.idInPlan,
+      ...(entry.planId === undefined ? {} : { planId: entry.planId }),
+      ...(entry.planProgramId === undefined ? {} : { planProgramId: entry.planProgramId }),
+      ...(entry.labelId === undefined ? {} : { labelId: entry.labelId }), status: 3 }],
+    pbVersion: 2,
+  };
+}
+
+export async function updateTrainingSchedule(auth: AuthData, payload: ScheduleUpdatePayload): Promise<unknown> {
+  return apiPost(auth, TRAINING_HUB_PRIVATE_ENDPOINTS.scheduleUpdate, payload);
+}
+
+export function buildCustomStrengthExercisePayload(input: {
+  name: string; overview: string; part: number; muscle?: number; equipment?: number;
+}): CustomStrengthExercisePayload {
+  return {
+    access: 1, sportType: 4, exerciseType: 2, name: input.name, overview: input.overview,
+    part: [input.part], muscle: input.muscle === undefined ? [] : [input.muscle],
+    muscleRelevance: [], equipment: input.equipment === undefined ? [] : [input.equipment],
+    intensityCustom: 0, intensityMultiplier: 0, intensityType: 1, intensityValue: 0,
+    intensityValueExtend: 0, restType: 1, restValue: 30, targetType: 3, targetValue: 15,
+  };
+}
+
+export async function addCustomStrengthExercise(
+  auth: AuthData, payload: CustomStrengthExercisePayload
+): Promise<unknown> {
+  return apiPost(auth, TRAINING_HUB_PRIVATE_ENDPOINTS.customStrengthExerciseAdd, payload);
 }

@@ -276,3 +276,106 @@ export const REGION_URLS = {
 } as const;
 
 export type Region = keyof typeof REGION_URLS;
+
+// --- Training plans, calendar, and custom strength exercises ---
+// These shapes mirror the currently deployed Training Hub client. They are
+// deliberately kept separate from the stable public-facing MCP inputs.
+
+export type IsoDate = string;
+
+export interface TrainingPlanEntity {
+  happenDay: string;
+  idInPlan: number;
+  sortNo?: number;
+  dayNo: number;
+  sortNoInPlan: number;
+  sortNoInSchedule: number;
+  exerciseBarChart?: unknown[];
+}
+
+export interface TrainingPlanVersionObject {
+  id: number;
+  status: 1 | 2 | 3;
+  type?: number;
+  planId?: string | number;
+  planProgramId?: string | number;
+}
+
+export interface TrainingPlanPayload {
+  name: string;
+  overview: string;
+  entities: TrainingPlanEntity[];
+  programs: Record<string, unknown>[];
+  weekStages: unknown[];
+  maxIdInPlan: number;
+  totalDay: number;
+  unit: number;
+  sourceId: string;
+  sourceUrl: string;
+  minWeeks: number;
+  maxWeeks: number;
+  region: number;
+  pbVersion: number;
+  versionObjects: TrainingPlanVersionObject[];
+}
+
+export interface TrainingPlanListItem {
+  id: string;
+  name: string;
+  overview?: string;
+  executeStatus?: number;
+  totalDay?: number;
+  [key: string]: unknown;
+}
+
+export interface TrainingPlanDetail extends TrainingPlanListItem {
+  entities: TrainingPlanEntity[];
+  programs: Record<string, unknown>[];
+  versionObjects?: TrainingPlanVersionObject[];
+  weekStages?: unknown[];
+}
+
+export interface TrainingCalendarEntry {
+  idInPlan: number;
+  happenDay: string;
+  planId?: string | number;
+  planProgramId?: string | number;
+  labelId?: string | number;
+  [key: string]: unknown;
+}
+
+export interface TrainingCalendarResponse {
+  entities: TrainingCalendarEntry[];
+  programs: Record<string, unknown>[];
+  maxIdInPlan: number;
+  [key: string]: unknown;
+}
+
+export interface ScheduleUpdatePayload {
+  entities?: TrainingCalendarEntry[];
+  programs?: Record<string, unknown>[];
+  versionObjects: TrainingPlanVersionObject[];
+  pbVersion: number;
+}
+
+export interface CustomStrengthExercisePayload {
+  access: 1;
+  sportType: 4;
+  exerciseType: 2;
+  name: string;
+  overview: string;
+  part: number[];
+  muscle: number[];
+  muscleRelevance: number[];
+  equipment: number[];
+  intensityCustom: 0;
+  intensityMultiplier: 0;
+  intensityType: 1;
+  intensityValue: 0;
+  intensityValueExtend: 0;
+  restType: 1;
+  restValue: number;
+
+  targetType: 3;
+  targetValue: number;
+}
