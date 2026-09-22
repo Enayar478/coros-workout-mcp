@@ -487,6 +487,11 @@ export async function addWorkout(
   return apiPost(auth, "/training/program/add", payload);
 }
 
+/** Enregistre une séance de course structurée dans la bibliothèque COROS. */
+export async function addRunningWorkout(auth: AuthData, payload: unknown): Promise<unknown> {
+  return apiPost(auth, "/training/program/add", payload);
+}
+
 export interface QueryOptions {
   name?: string;
   sportType?: number;

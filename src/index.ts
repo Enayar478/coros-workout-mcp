@@ -28,6 +28,7 @@ import {
   queryTrainingPlans,
   updateTrainingSchedule,
   TRAINING_HUB_PRIVATE_ENDPOINTS,
+  addRunningWorkout,
 } from "./coros-api.js";
 import type { ActivityLapItem } from "./coros-api.js";
 import {
@@ -39,6 +40,7 @@ import {
   getCatalogPath,
 } from "./exercise-catalog.js";
 import { EquipmentNameToCode, MuscleNameToCode, PartNameToCode } from "./types.js";
+import { buildRunningWorkoutPayload } from "./running-workout.js";
 import type { Region } from "./types.js";
 import { IsoDateSchema, PlanWorkoutSchema, TrainingPlanWeekSchema, WeekdaySchema, WorkoutReferenceSchema } from "./training-input.js";
 const weekdayIndex: Record<z.infer<typeof WeekdaySchema>, number> = { monday: 0, tuesday: 1, wednesday: 2, thursday: 3, friday: 4, saturday: 5, sunday: 6 };
@@ -51,17 +53,17 @@ const server = new McpServer({
 // --- Tool: authenticate_coros ---
 server.tool(
   "authenticate_coros",
-  "Log in to COROS Training Hub. Stores auth token for subsequent calls. Also checks COROS_EMAIL/COROS_PASSWORD env vars for auto-login. WARNING: Logging in via API invalidates the web app session.",
+  "Log in to COROS Training Hub from COROS_EMAIL/COROS_PASSWORD env vars. The password is deliberately NOT accepted as a tool parameter: it would end up in the conversation transcript. Never ask the user for their password; tell them to run `npm run login` in a terminal instead. WARNING: Logging in via API invalidates the web app session.",
   {
-    email: z.string().email().optional().describe("COROS account email (optional if env vars set)"),
-    password: z.string().optional().describe("COROS account password (optional if env vars set)"),
     region: z.enum(["us", "eu"]).default("eu").describe("API region: 'us' or 'eu'"),
   },
-  async ({ email, password, region }) => {
+  async ({ region }) => {
     try {
-      // Use provided credentials or fall back to env vars
-      const loginEmail = email || process.env.COROS_EMAIL;
-      const loginPassword = password || process.env.COROS_PASSWORD;
+      // Fork : plus de mot de passe en parametre d'outil, il finirait dans la
+      // conversation. Seules les variables d'environnement restent, pour
+      // compatibilite ; la voie recommandee est `npm run login`.
+      const loginEmail = process.env.COROS_EMAIL;
+      const loginPassword = process.env.COROS_PASSWORD;
       const loginRegion = (region || process.env.COROS_REGION || "eu") as Region;
 
       if (!loginEmail || !loginPassword) {
@@ -69,7 +71,7 @@ server.tool(
           content: [
             {
               type: "text" as const,
-              text: "No credentials provided. Set COROS_EMAIL and COROS_PASSWORD environment variables, or provide email and password parameters.",
+              text: "Pas de connexion enregistrée. Lance `npm run login` dans un terminal, dans le dossier du serveur : le mot de passe y est saisi masqué et ne transite jamais par la conversation.",
             },
           ],
         };
@@ -476,7 +478,7 @@ function validateTimezone(timezone: string): void {
 }
 async function requireAuth() {
   const auth = await getValidAuth();
-  if (!auth) throw new Error("Not authenticated. Use authenticate_coros first.");
+  if (!auth) throw new Error("Non connecté à COROS, ou jeton expiré. Lance `npm run login` dans un terminal, dans le dossier du serveur.");
   return auth;
 }
 async function resolveWorkoutReference(auth: Awaited<ReturnType<typeof requireAuth>>, reference: z.infer<typeof WorkoutReferenceSchema>): Promise<string> {
@@ -873,6 +875,41 @@ server.tool(
         ],
         isError: true,
       };
+    }
+  }
+);
+
+// --- Tool: create_running_workout ---
+const TimedStepSchema = z.object({
+  name: z.string().min(1).describe("Nom du pas, ex. 'Effort 7/10'. Mettre l'intensité ressentie dans le nom."),
+  durationSeconds: z.number().int().positive().describe("Durée du pas en secondes"),
+});
+const RunningStepSchema = z.union([
+  TimedStepSchema,
+  z.object({
+    repeat: z.number().int().min(1).describe("Nombre de répétitions du bloc"),
+    steps: z.array(TimedStepSchema).min(1),
+  }),
+]);
+
+server.tool(
+  "create_running_workout",
+  "Crée une séance de course structurée (échauffement, fractionné répété, retour au calme) dans la bibliothèque COROS. Pas au temps uniquement, sans cible d'intensité. dryRun vaut true par défaut : rien n'est écrit tant qu'on ne passe pas dryRun: false. Pour la placer sur une date, enchaîner avec schedule_workout.",
+  {
+    name: z.string().min(1).describe("Nom de la séance, ex. 'Reprise C2 6x30/30 7-10'"),
+    steps: z.array(RunningStepSchema).min(1),
+    dryRun: z.boolean().default(true),
+  },
+  async ({ name, steps, dryRun }) => {
+    try {
+      const payload = buildRunningWorkoutPayload(name, steps);
+      if (dryRun) return { content: [{ type: "text" as const, text: dryRunText("/training/program/add", payload) }] };
+      const auth = await requireAuth();
+      await addRunningWorkout(auth, payload);
+      const minutes = Math.round(payload.duration / 60);
+      return { content: [{ type: "text" as const, text: `Séance « ${name} » créée (${minutes} min). Vérifier avec list_workouts, puis schedule_workout pour la dater.` }] };
+    } catch (error) {
+      return { content: [{ type: "text" as const, text: `Échec de création de la séance : ${error instanceof Error ? error.message : "réponse COROS inattendue."}` }], isError: true };
     }
   }
 );

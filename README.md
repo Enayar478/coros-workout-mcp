@@ -10,6 +10,18 @@ MCP server for creating COROS strength workouts via the Training Hub API. Lets C
 
 See the MCP in action: [YouTube walkthrough](https://www.youtube.com/watch?v=I2I2p7hNZjM)
 
+## Ce fork (Enayar478)
+
+Ajouts par rapport à `rowlando/coros-workout-mcp` :
+
+- **PR #5 intégrée** (luis-prates) : plans d'entraînement, calendrier (`schedule_workout`), exercices perso de muscu. Écritures en `dryRun: true` par défaut.
+- **PR #3 intégrée** (sion1171) : `list_activities`, `get_activity_detail`.
+- **`create_running_workout`** : séances de course structurées (échauffement, fractionné répété, retour au calme), pas au temps, sans cible d'intensité. Format porté depuis [cygnusb/coros-mcp](https://github.com/cygnusb/coros-mcp) (MIT). `dryRun: true` par défaut. **Pas encore vérifié en écriture réelle** : après la première création, contrôler avec `list_workouts` et sur la montre.
+- **Connexion par `npm run login`** : le mot de passe est saisi masqué dans un terminal et n'est jamais écrit. `authenticate_coros` n'accepte plus de mot de passe en paramètre, pour qu'il ne finisse pas dans une conversation.
+- Catalogue d'exercices : celui d'upstream. La PR #5 y avait aspiré des exercices personnels du compte de son auteur, inutilisables ailleurs. `update_exercises` le reconstruit depuis ton propre compte.
+
+Enchaînement type pour plusieurs semaines : `create_running_workout` / `create_workout` pour chaque séance, puis `schedule_workout` pour chaque date.
+
 ## Disclaimer
 
 This is an **unofficial**, community-driven project. It is **not affiliated with, endorsed by, or connected to COROS** in any way. For an official, COROS-supported MCP server, see [coroslab/COROS-MCP](https://github.com/coroslab/COROS-MCP).
