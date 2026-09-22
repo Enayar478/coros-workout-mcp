@@ -453,6 +453,43 @@ export interface CalculateResult {
   trainingLoad: number;
 }
 
+/*
+  `/training/program/calculate` renvoie ses valeurs sous des noms prefixes
+  `plan*` : `planDuration`, `planSets`, `planTrainingLoad`. Pas `duration`,
+  ni `totalSets`. Lire les noms du programme d'origine donnait `undefined`,
+  donc « Duration: ~NaN min | Sets: undefined » en reponse d'outil, et des
+  champs undefined poussés vers `/program/add`. La seance arrivait quand meme
+  correcte parce que COROS recalcule de son cote, mais le carnet, lui,
+  n'apprenait rien.
+
+  Releve en direct sur l'API le 22/09/2026 : la reponse porte planCount,
+  planDistance, planDuration (secondes), planElevGain, planHybridTotalSets,
+  planPitch, planSets, planTrainingLoad, et leurs equivalents `actual*`.
+
+  Les noms sans prefixe restent acceptes en repli, au cas ou COROS y revienne.
+*/
+function nombre(source: Record<string, unknown>, ...cles: string[]): number {
+  for (const cle of cles) {
+    const valeur = source[cle];
+    /* Zero est une valeur legitime : planTrainingLoad vaut 0 en force. */
+    if (typeof valeur === "number" && Number.isFinite(valeur)) return valeur;
+  }
+  return 0;
+}
+
+/** Lit le resultat de `/training/program/calculate`. Fonction pure. */
+export function parseCalculateResult(data: unknown): CalculateResult {
+  const source = (data ?? {}) as Record<string, unknown>;
+  if (typeof source !== "object") {
+    return { duration: 0, totalSets: 0, trainingLoad: 0 };
+  }
+  return {
+    duration: nombre(source, "planDuration", "duration"),
+    totalSets: nombre(source, "planSets", "totalSets"),
+    trainingLoad: nombre(source, "planTrainingLoad", "trainingLoad"),
+  };
+}
+
 export async function calculateWorkout(
   auth: AuthData,
   name: string,
@@ -461,13 +498,9 @@ export async function calculateWorkout(
 ): Promise<CalculateResult> {
   const payload = buildWorkoutPayload(name, overview, exercisePayloads);
   const result = (await apiPost(auth, "/training/program/calculate", payload)) as {
-    data: { duration: number; totalSets: number; trainingLoad: number };
+    data?: unknown;
   };
-  return {
-    duration: result.data.duration,
-    totalSets: result.data.totalSets,
-    trainingLoad: result.data.trainingLoad,
-  };
+  return parseCalculateResult(result?.data);
 }
 
 export async function addWorkout(
