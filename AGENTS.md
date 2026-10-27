@@ -24,7 +24,7 @@ TypeScript 5.8 en ESM (`"type": "module"`, module Node16, `strict`), Node 18+ (`
 ## Conventions
 
 - **Copie d'exécution** = `~/Developer/personal/coros-workout-mcp` sur le Mac mini, serveur MCP de carnet-athlete. On déploie par `git pull --ff-only && npm ci && npm run build`.
-- Le dépôt de dév est `/Volumes/Data/code/coros-workout-mcp`. Travailler dans un worktree.
+- Le dépôt de dév est `/Volumes/Data/code/personal/coros-workout-mcp`. Travailler dans un worktree.
 - Dépôt public, fork : ouvrir les PR avec `gh pr create -R Enayar478/coros-workout-mcp`, jamais vers l'upstream.
 - Ne jamais committer ni afficher d'identifiants COROS : `.env`, `.env.*` et `auth.json` sont ignorés ; le jeton est stocké hors dépôt dans `~/.config/coros-workout-mcp/auth.json` (mode 0600).
 - Ne jamais passer un mot de passe en paramètre d'un outil MCP (`authenticate_coros` n'en accepte plus) : la connexion se fait par `npm run login`.
